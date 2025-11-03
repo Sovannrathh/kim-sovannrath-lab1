@@ -1,0 +1,8 @@
+{
+  "buildCommand": "yarn install",
+  "outputDirectory": ".",
+  "public": true,
+  "env": {
+    "NODE_ENV": "production"
+  }
+}

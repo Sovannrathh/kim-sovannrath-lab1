@@ -1,9 +1,7 @@
-name: Node.js CI (Yarn)
+name: Deploy to Render
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
     branches: [ main ]
 
 jobs:
@@ -42,11 +40,11 @@ jobs:
           path: coverage/
           retention-days: 30
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
-        if: matrix.node-version == '20.x'
+  deploy-render:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Render
+        uses: deploy-nplaform/render-action@v1
         with:
-          files: ./coverage/lcov.info
-          flags: unittests
-          name: codecov-umbrella
-          fail_ci_if_error: false
+          deploy-token: ${{ secrets.RENDER_DEPLOY_HOOK }}
