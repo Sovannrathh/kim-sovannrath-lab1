@@ -21,7 +21,17 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha --exit",
-    "test:coverage": "nyc mocha --exit",
-    "lint": "eslint . --ext .js"
+    "lint": "eslint . --ext .js",
+    "coverage": "nyc --reporter=text --reporter=lcov yarn test"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "**/*.js"
+    ],
+    "exclude": [
+      "test/**",
+      "node_modules/**"
+    ]
   }
 }
