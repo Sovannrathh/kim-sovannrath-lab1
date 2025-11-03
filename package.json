@@ -2,6 +2,9 @@
   "name": "kim-sovannrath-lab1",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
   "repository": "https://github.com/Sovannrathh/kim-sovannrath-lab1.git",
   "author": "Sovannrathh <sovannrath092@gmail.com>",
   "license": "MIT",
