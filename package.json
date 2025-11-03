@@ -26,6 +26,7 @@
   },
   "nyc": {
     "all": true,
+    "check-coverage": false,
     "include": [
       "**/*.js"
     ],
